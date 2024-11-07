@@ -3,7 +3,7 @@ import React from "react";
 interface OptionButtonProps {
   text: string;
   videoUrl: string;
-  onClick: () => void;
+  onClick: (videoUrl: string) => void;
 }
 
 const OptionButton: React.FC<OptionButtonProps> = ({

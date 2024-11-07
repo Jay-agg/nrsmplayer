@@ -9,7 +9,7 @@ const VideoPlayer = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [showPlayButton, setShowPlayButton] = useState(true);
   const [timerStarted, setTimerStarted] = useState(false);
-  const videoRef = useRef(null);
+  const videoRef = useRef<any>(null);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -56,7 +56,7 @@ const VideoPlayer = () => {
     setIsPlaying(!isPlaying);
   };
 
-  const handleOptionButtonClick = (videoPath: any) => {
+  const handleOptionButtonClick = (videoPath: string) => {
     setVideoSrc(videoPath);
     setShowOptions(false);
   };
@@ -87,21 +87,21 @@ const VideoPlayer = () => {
             <OptionButton
               text="1"
               videoUrl="/video1.mp4"
-              onClick={handleOptionButtonClick}
+              onClick={() => handleOptionButtonClick}
             />
           </div>
           <div className="absolute w-5 h-5 flex items-center justify-center bottom-[160px] left-[170px] outline outline-white cursor-pointer -translate-x-1/2 bg-green-800 hover:bg-green-800/70 text-white p-3 rounded-full transition-colors">
             <OptionButton
               text="2"
               videoUrl="/video2.mp4"
-              onClick={handleOptionButtonClick}
+              onClick={() => handleOptionButtonClick}
             />
           </div>
           <div className="absolute w-5 h-5 flex items-center justify-center bottom-[180px] left-[250px] outline outline-white cursor-pointer -translate-x-1/2 bg-yellow-800 hover:bg-yellow-800/70 text-white p-3 rounded-full transition-colors">
             <OptionButton
               text="3"
               videoUrl="/video3.mp4"
-              onClick={handleOptionButtonClick}
+              onClick={() => handleOptionButtonClick}
             />
           </div>
         </>

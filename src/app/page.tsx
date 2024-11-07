@@ -1,4 +1,3 @@
-import Image from "next/image";
 import VideoPlayer from "./_components/VideoPlayer";
 
 export default function Home() {
